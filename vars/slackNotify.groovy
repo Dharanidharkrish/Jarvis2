@@ -1,3 +1,3 @@
 def call(String msg='STAGE'){
-  echo '$(msg)'
+  echo '${msg}'
 }
