@@ -17,5 +17,10 @@ pipeline {
                 }
             }
         }
+	stage('Deploy'){
+		steps{
+			deploy adapters: [tomcat9(credentialsId: 'fff9666c-1fd4-456f-981d-3b4f20f96fb1', path: '', url: 'http://3.19.65.223:8990/')], contextPath: null, onFailure: false, war: '**/*.war'
+			}
+		}
       }
 	}
