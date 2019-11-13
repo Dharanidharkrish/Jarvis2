@@ -9,14 +9,13 @@ pipeline {
         stage('Compile-Build-Test ') {
             steps {
 	    	slackNotify 'Build Started'
-                sh 'mvn clean package'
+                compile-build-test
             }
         }
         stage('SonarQube Analysis'){
             steps{
-               withSonarQubeEnv('sonarqube'){
-                     sh 'mvn sonar:sonar'
-                }
+	    	slackNotify 'SonarQube Analysis Started'
+               	sonar
             }
         }
 	stage('Deploy'){
