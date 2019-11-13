@@ -16,6 +16,7 @@ pipeline {
             steps{
 	    	slackNotify 'SonarQube Analysis Started'
                	sonar 'SONAR'
+		echo gvar.url
             }
         }
 	stage('Deploy'){
