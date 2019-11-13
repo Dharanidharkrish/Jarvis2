@@ -9,13 +9,13 @@ pipeline {
         stage('Compile-Build-Test ') {
             steps {
 	    	slackNotify 'Build Started'
-                build
+                @build
             }
         }
         stage('SonarQube Analysis'){
             steps{
 	    	slackNotify 'SonarQube Analysis Started'
-               	sonar
+               	@sonar
             }
         }
 	stage('Deploy'){
