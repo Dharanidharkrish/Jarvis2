@@ -8,7 +8,6 @@ pipeline {
     stages {
         stage('Compile-Build-Test ') {
             steps {
-	    	slackNotify 'Building Started'
                 sh 'mvn clean package'
             }
         }
